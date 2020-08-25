@@ -1,0 +1,38 @@
+{
+  "name": "wp-stock-ticker",
+  "version": "1.0.0",
+  "description": "A WordPress starter plugin for those who want to use ReactJs in the development of WordPress Plugins.",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cors-proxy-webpack-plugin": "0.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "bable-loader": "^0.0.1-security",
+    "cors": "^2.8.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "http-proxy-middleware": "^1.0.5"
+  },
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shandyw/wp-stock-ticker.git"
+  },
+  "keywords": [
+    "wordpress",
+    "ReactJs",
+    "Plugin"
+  ],
+  "author": "Shandy Ward",
+  "license": "MIT",
+  "homepage": "https://github.com/shandyw/wp-stock-ticker#readme"
+}

@@ -1,0 +1,59 @@
+#tick div div {
+display:none;
+}
+#tick div div.APA {
+	display:block;
+}
+#tick .arrowup:before {
+	  position:relative;
+	top: -2px;
+ 	 content: "\2191" !important;
+	background:none !important;
+	 font-size:15px;
+	 display:inline-block;
+	 font-weight:bold;
+	 font-family:sans-serif;
+	   margin:0px 2px 0px 0px;
+}
+#tick .arrowdown:before {
+	 position:relative;
+	top: -2px;
+	 content: "\2193" !important;
+	background:none !important;
+	 font-size:15px;
+	 display:inline-block;
+	 font-weight:bold;
+	 font-family:sans-serif; 
+   margin:0px 2px 0px 0px;
+}
+#tick .numberplus:before,
+#tick .percentplus:before
+ {
+	  position:relative;
+	top: 0px;
+ 	 content: "+" !important;
+	background:none !important;
+	 font-size:15px;
+	 display:inline-block;
+	
+	 font-family:sans-serif;
+	   margin:0px 1px 0px 0px;
+}
+
+
+#tick .percentminus:before,
+#tick .numberminus:before {
+	 position:relative;
+	top: 0px;
+ 	 content: "-" !important;
+	background:none !important;
+	 font-size:15px;
+	 display:inline-block;
+	
+	 font-family:sans-serif;
+	   margin:0px 1px 0px 0px;
+}
+
+#tick .space {
+	margin-left:7px;
+}

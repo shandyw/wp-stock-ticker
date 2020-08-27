@@ -6,6 +6,7 @@ const apiKey = 'bc496b81-f16c-4e1f-b700-d1f4bd7690d3';
 
 
 
+
 class App extends React.Component {
    constructor(props) {
     super(props);
@@ -26,9 +27,21 @@ class App extends React.Component {
 
         fetch(API + '?api_key=' + apiKey,{
              method: 'GET',
+              mode: 'cors', // no-cors, *cors, same-origin
+              cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+              credentials: 'same-origin', // include, *same-origin, omit
+              headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              redirect: 'follow', // manual, *follow, error
+              referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+              
+
         }) 
 
         .then(response =>  response.json())
+    
             .then(resData => {
                
                this.setState({ 
@@ -36,9 +49,7 @@ class App extends React.Component {
                     hits: resData.data 
                 }); //this is an asynchronous function
             },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
+          
             (error) => {
               this.setState({
                 isLoaded: true,
@@ -66,7 +77,7 @@ class App extends React.Component {
         return <div>Error: {error.message}</div>;
     } 
         else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <div></div>;
     } 
     else {
  
@@ -76,6 +87,7 @@ class App extends React.Component {
 
                { 
                   this.state.hits.map((hit) => {
+      
 
                     return <div key={hit.symbol} className={hit.symbol}>
                     Nasdaq {hit.symbol} <span className={'arrow' +  (hit.changePercent > 0 ? "up" : "down")}>${hit.lastTrade}</span> <span className={'space number' +  (hit.changePercent > 0 ? "plus" : "minus")}>{hit.changeNumber}</span> (<span className={'percent' +  (hit.changePercent > 0 ? "plus" : "minus")}>{hit.changePercent}</span>)
